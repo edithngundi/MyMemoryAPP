@@ -15,5 +15,4 @@ val DEFAULT_ICONS = listOf(
     R.drawable.hive,
     R.drawable.star,
     R.drawable.fort
-
 )
