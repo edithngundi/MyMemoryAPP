@@ -1,6 +1,8 @@
 package com.msedith.mymemoryapp
 
 import android.animation.ArgbEvaluator
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +12,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.compose.material3.Snackbar
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -22,6 +26,7 @@ import com.msedith.mymemoryapp.models.MemoryCard
 import com.msedith.mymemoryapp.models.MemoryGame
 import com.msedith.mymemoryapp.utils.DEFAULT_ICONS
 import com.google.android.material.snackbar.Snackbar
+import com.msedith.mymemoryapp.utils.EXTRA_BOARD_SIZE
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var memoryGame: MemoryGame
     private lateinit var adapter : MemoryBoardAdapter
     private var boardSize: BoardSize = BoardSize.EASY
+    private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
     companion object {
         private const val TAG = "MainActivity"
@@ -48,6 +54,14 @@ class MainActivity : AppCompatActivity() {
         tvNumPairs = findViewById(R.id.tvNumPairs)
 
         setupBoard()
+
+        activityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data: Intent? = result.data
+            }
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -70,8 +84,27 @@ class MainActivity : AppCompatActivity() {
                 showNewSizeDialog()
                 return true
             }
+            R.id.menu_item_customgame -> {
+                showCreationDialog()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun showCreationDialog() {
+        val boardSizeView = LayoutInflater.from(this).inflate(R.layout.dialog_board_size, null)
+        val radioGroupSize = boardSizeView.findViewById<RadioGroup>(R.id.radioGroup)
+        showAlertDialog("Create your own memory board", boardSizeView, View.OnClickListener {
+            val chosenBoardSize = when (radioGroupSize.checkedRadioButtonId){
+                R.id.rbEasy -> BoardSize.EASY
+                R.id.rbMedium -> BoardSize.MEDIUM
+                else -> BoardSize.HARD
+            }
+            val intent = Intent(this, CreateActivity::class.java)
+            intent.putExtra(EXTRA_BOARD_SIZE, chosenBoardSize)
+            activityResultLauncher.launch(intent)
+        })
     }
 
     private fun showNewSizeDialog() {
