@@ -29,6 +29,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.msedith.mymemoryapp.utils.EXTRA_BOARD_SIZE
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        private const val TAG = "MainActivity"
+        private const val CREATE_REQUEST_CODE = 248
+    }
 
     private lateinit var clRoot : ConstraintLayout
     private lateinit var rvBoard : RecyclerView
@@ -38,11 +42,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var memoryGame: MemoryGame
     private lateinit var adapter : MemoryBoardAdapter
     private var boardSize: BoardSize = BoardSize.EASY
-    private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
-
-    companion object {
-        private const val TAG = "MainActivity"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,19 +52,7 @@ class MainActivity : AppCompatActivity() {
         tvNumMoves = findViewById(R.id.tvNumMoves)
         tvNumPairs = findViewById(R.id.tvNumPairs)
 
-        val intent = Intent(this, CreateActivity::class.java)
-        intent.putExtra(EXTRA_BOARD_SIZE, BoardSize.MEDIUM)
-        startActivity(intent)
-
         setupBoard()
-
-        activityResultLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val data: Intent? = result.data
-            }
-        }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -107,7 +94,7 @@ class MainActivity : AppCompatActivity() {
             }
             val intent = Intent(this, CreateActivity::class.java)
             intent.putExtra(EXTRA_BOARD_SIZE, chosenBoardSize)
-            activityResultLauncher.launch(intent)
+            startActivityForResult(intent, CREATE_REQUEST_CODE)
         })
     }
 

@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.msedith.mymemoryapp" />
+                  <option name="mobileSdkAppId" value="1:84815432876:android:ea670d863df2251a992309" />
+                  <option name="projectId" value="my-memory-60149" />
+                  <option name="projectNumber" value="84815432876" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
