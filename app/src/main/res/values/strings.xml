@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyMemoryApp</string>
     <string name="refresh">Refresh</string>
+    <string name="enter_game_name">Enter game name</string>
 </resources>
