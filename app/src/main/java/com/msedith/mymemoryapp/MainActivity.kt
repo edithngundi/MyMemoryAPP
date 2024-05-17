@@ -19,6 +19,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.github.jinatonic.confetti.CommonConfetti
 import com.msedith.mymemoryapp.models.BoardSize
 import com.msedith.mymemoryapp.models.MemoryGame
 import com.google.android.material.snackbar.Snackbar
@@ -28,6 +29,7 @@ import com.msedith.mymemoryapp.models.UserImageList
 import com.msedith.mymemoryapp.utils.EXTRA_BOARD_SIZE
 import com.msedith.mymemoryapp.utils.EXTRA_GAME_NAME
 import com.squareup.picasso.Picasso
+import android.graphics.Color
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -228,6 +230,7 @@ class MainActivity : AppCompatActivity() {
             tvNumPairs.text = "Pairs: ${memoryGame.numPairsFound}/ ${boardSize.getNumPairs()}"
             if (memoryGame.haveWonGame()){
                 Snackbar.make(clRoot, "You won! Congratulations", Snackbar.LENGTH_LONG).show()
+                CommonConfetti.rainingConfetti(clRoot, intArrayOf(Color.YELLOW, Color.GREEN, Color.MAGENTA)).oneShot()
             }
         }
         tvNumMoves.text = "Moves: ${memoryGame.getNumMoves()}"
