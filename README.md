@@ -39,7 +39,7 @@ The following are extension features to be implemented in future:
 
 Here are the implemented user stories:
 
-<img src='https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/1.png' title='Video Walkthrough' width='100' height='300' alt='Video Walkthrough' />
+<img src='https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/1.png' title='Video Walkthrough' width='150' height='300' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS
 
