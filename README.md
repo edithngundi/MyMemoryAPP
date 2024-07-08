@@ -1,4 +1,4 @@
-*Memory Game*
+# Memory Game
 
 **Memory game** is a concentration challenge where players flip over pairs of cards to find matching pairs by remembering their positions.
 
@@ -39,15 +39,19 @@ The following are extension features to be implemented in future:
 
 Here are the implemented user stories:
 
-<img src='https://raw.githubusercontent.com/edithngundi/BitFit/main/bitfit2.gif' title='Video Walkthrough' width='300' height='700' alt='Video Walkthrough' />
-
-GIF created with [Kap](https://getkap.co/) for macOS
-
-## Notes
-
-Describe any challenges encountered while building the app.
-- Struggled connecting my entries with the view model
-- The data is not persistent
+<div style="display: flex; flex-wrap: wrap; gap: 20px; max-width: 1000px;">
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/1.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/2.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/3.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/4.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/5.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/6.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/7.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/8.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/9.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/10.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/11.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
+</div>
 
 ## License
 
