@@ -20,7 +20,7 @@ The following features are completed:
 - [x] Display a message or screen indicating the game is won.
 - [x] Provide a way to reset the game.
 - [x] Allow the game to be restarted with shuffled cards.
-- [x] Offer different grid sizes (e.g., 4x4, 6x6) for varying difficulty.
+- [x] Offer different grid sizes (e.g., 2x4, 3x6) for varying difficulty.
 - [x] Allow users to create custom game using their own pictures.
 - [x] Allow users to download games that they have created before.
 
