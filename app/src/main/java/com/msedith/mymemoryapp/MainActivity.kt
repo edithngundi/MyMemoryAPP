@@ -30,6 +30,8 @@ import com.msedith.mymemoryapp.utils.EXTRA_BOARD_SIZE
 import com.msedith.mymemoryapp.utils.EXTRA_GAME_NAME
 import com.squareup.picasso.Picasso
 import android.graphics.Color
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.analytics
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -48,10 +50,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var memoryGame: MemoryGame
     private lateinit var adapter : MemoryBoardAdapter
     private var boardSize: BoardSize = BoardSize.EASY
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        firebaseAnalytics = Firebase.analytics
 
         clRoot = findViewById(R.id.clRoot)
         rvBoard = findViewById(R.id.rvBoard)
