@@ -39,7 +39,7 @@ The following are extension features to be implemented in future:
 
 Here are the implemented user stories:
 
-<div style="display: flex; flex-wrap: wrap; gap: 100px;">
+<div style="display: flex; flex-wrap: wrap; gap: 20px; max-width: 1000px;">
     <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/1.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
     <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/2.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
     <img src="https://raw.githubusercontent.com/edithngundi/MyMemoryAPP/main/Screenshots/3.png" title="Video Walkthrough" width="150" height="330" alt="Screenshot" />
